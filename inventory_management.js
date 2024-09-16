@@ -7,3 +7,10 @@ const inventory = [
     {name: 'Pillow Case', price: 5.99, quantity: 66, lowStockLevel: 6}, //Array info for a pillow case
     {name: 'Sheet', price: 8.99, quantity: 29, lowStockLevel: 5}, // Array info for a sheet
 ];
+
+//Task 2: Create a Function to Display product Details
+
+function displayProductDetails(product) {
+    const stockStatus = product.quantity <= product.lowStockLevel ? 'Low Stock' : 'In Stock';
+    console.log(`Product: ${product.name}, Price: $${product.price}, Quantity: ${product.quantity}, Stock Status: ${stockStatus}`);
+};
