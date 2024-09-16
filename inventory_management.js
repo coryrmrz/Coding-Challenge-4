@@ -18,13 +18,13 @@ function displayProductDetails(product) { //function to display product details
 //Task 3: Create a Function to Update Product Stock After Sales
 
 function updateStock(product, unitsSold) {
-    product.quantity -= unitsSold;
+    product.quantity -= unitsSold; // equation to reflect current quantity in stock after sold
     let stockStatus;
-    if (product.quantity <= 0) {
-        console.log(`${product.name} - Out of Stock`);
+    if (product.quantity <= 0) { 
+        console.log(`${product.name} - Out of Stock`); // if current quantity is less than 0, then message diplays out of stock
     } else if (product.quantity <= product.lowStockLevel) {
-        console.log(`${product.name} - Low Stock`);
+        console.log(`${product.name} - Low Stock`); // if current quantity is less than low stock level, then message displays low stock
     } else {
-        console.log(`${product.name} - In Stock`);
+        console.log(`${product.name} - In Stock`); // if current quantity is not the above, then message displays in stock
     }
 };
