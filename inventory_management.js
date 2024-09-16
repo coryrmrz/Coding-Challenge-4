@@ -43,6 +43,17 @@ function checkLowStock(inventory) {
 
 function calculateInventoryValue(inventory) { //create function to get total value of products in inventory
     const totalValue = inventory.reduce((total, product) => total + (product.price * product.quantity), 0); //use array method .reduce to calulate total value by multiplying price by quantity
-    return totalValue; //returns total value
+    return totalValue;
 }
 console.log(`Total Value: $${calculateInventoryValue(inventory)}`); //output total value of inventory
+
+//Task 6: Create a Function to Process a Sale
+
+function processSale(productName, unitsSold) { 
+    const product = inventory.find(object => object.name === productName); //function to find object (product) name in the array
+    if (product) {
+        updateStock(product, unitsSold); //if product found, then call update stock function to reduce the quantity
+    } else {
+        console.log(`Error: ${productName} - Not in Inventory`); //if product not found, then error message displays
+    };
+};
